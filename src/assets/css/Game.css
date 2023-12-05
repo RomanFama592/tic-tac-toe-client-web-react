@@ -1,0 +1,35 @@
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    user-select: none;
+    justify-content: center;
+    /* width: 70vw;
+    width: 70dvw;
+    height: 70vh;
+    height: 70dvh; 
+    margin: 1rem; */
+}
+
+.extras-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    user-select: none;
+}
+
+@media (orientation: landscape) {
+    .game-container {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .extras-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+}

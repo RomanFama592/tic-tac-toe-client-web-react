@@ -1,0 +1,28 @@
+name: "Update readme"
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update README.md folder map
+        uses: RomanFama592/folder_mapping_action@v1
+        with:
+          template-output: "./docs/README.md.template.md"
+      - name: Confirm changes and push 
+        run: |
+          git config user.name bot-update-readme
+          git config user.email bot-update-readme@gmail.com
+
+          if git diff --quiet; then
+            echo "No hay cambios."
+          else
+            git add README.md
+            git commit -m "[bot] Update README.md changes -> $(git rev-parse --short HEAD)"
+            git push origin main
+          fi

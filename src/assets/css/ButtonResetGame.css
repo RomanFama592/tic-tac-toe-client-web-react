@@ -1,0 +1,25 @@
+.button-reset-game {
+    color: black;
+    background-color: #767676;
+    padding: 0.5rem;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    max-width: 4rem;
+    cursor: pointer;
+}
+
+.button-reset-game:hover:enabled {
+    background-color: #979797;
+}
+
+.button-reset-game:active:enabled {
+    color: #767676;
+    background-color: black;
+    border-color: #767676;
+
+}
+
+.button-reset-game.disable {
+    background-color: #333333;
+    cursor: auto;
+}

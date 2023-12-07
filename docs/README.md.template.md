@@ -1,6 +1,6 @@
 <div align="center">
 
-# tic-tac-toe-client-web-react
+# tic-tac-toe-react
 ![Contributions? Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
 ![Maintained? Yes](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen.svg)
 
@@ -62,7 +62,7 @@ npm run dev
 
 ## 👋 Contributions
 
-If you have a suggestion that would make this better, please fork the repo and create a Pull Request. You can also simply [open an issue](https://github.com/RomanFama592/tic-tac-toe-client-web-react/issues)
+If you have a suggestion that would make this better, please fork the repo and create a Pull Request. You can also simply [open an issue](https://github.com/RomanFama592/tic-tac-toe-react/issues)
 
 Don't forget to **give the project a star ⭐!** Thanks again!
 
@@ -71,7 +71,7 @@ Don't forget to **give the project a star ⭐!** Thanks again!
 2. Clone your fork
 
 ```bash
-git clone https://github.com/@your_username/tic-tac-toe-client-web-react
+git clone https://github.com/@your_username/tic-tac-toe-react
 ```
 
 3. Create your Feature Branch

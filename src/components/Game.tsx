@@ -3,9 +3,10 @@ import Turns from "./Turns"
 import Board from "./Board"
 import ButtonResetGame from "./ButtonResetGame"
 import WinningModal from "./WinningModal"
-import React, { useEffect, useMemo, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import GameContext from "@contexts/GameContext.tsx"
-import { constructEmptyBoard, randomTurns } from "@ts/funtions"
+import { randomTurns } from "@ts/funtions"
+import useMemoBoard from "@hooks/useMemoBoard"
 
 /**
  * The Game component is a React component that represents a game board with a specified size, tracks
@@ -17,13 +18,7 @@ import { constructEmptyBoard, randomTurns } from "@ts/funtions"
 export default function Game({ size = 3 }: { size?: number }) {
     const [turn, setTurn] = useState(randomTurns())
     const [winner, setWinner] = useState<string | null>(null)
-    const divGameContainer = useRef<HTMLDivElement | null>(null)
-
-    const boardEmpty = useMemo(() => {
-        return constructEmptyBoard(size)
-    }, [size])
-
-    const [board, setBoard] = useState(boardEmpty)
+    const {board, boardEmpty, setBoard} = useMemoBoard(size)
 
     const resetGame = () => {
         setWinner(null)
@@ -38,9 +33,6 @@ export default function Game({ size = 3 }: { size?: number }) {
     } as React.CSSProperties
 
     useEffect(() => {
-        if (divGameContainer.current) {
-            divGameContainer.current.style.setProperty('--size-board', String(size))
-        }
         resetGame()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [size])
@@ -48,7 +40,7 @@ export default function Game({ size = 3 }: { size?: number }) {
 
     return (
         <GameContext.Provider value={{ resetGame, setTurn, setWinner, setBoard, turn, winner, board }}>
-            <div ref={divGameContainer} className="game-container" style={style}>
+            <div className="game-container" style={style}>
                 <WinningModal />
                 <Board />
                 <div className="extras-container">

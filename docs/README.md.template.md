@@ -1,8 +1,8 @@
 <div align="center">
 
 # tic-tac-toe-react
-![Contributions? Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
-![Maintained? Yes](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen.svg)
+![Contributions? The project is archived](https://img.shields.io/badge/Contributions-the_project_is_archived-red.svg)
+![Maintained? No](https://img.shields.io/badge/Maintained%3F-No-red.svg)
 
 </div>
 
